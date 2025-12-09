@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Booking</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+        }
+        .sidebar {
+            width: 250px;
+            background: url('images/th.gif') no-repeat center center/cover;
+            color: white;
+            transition: width 0.3s;
+            padding: 20px;
+            box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .sidebar.collapsed {
+            width: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        .sidebar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            display: block;
+            padding: 10px 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+            transition: background 0.3s, color 0.3s;
+        }
+        .sidebar a:hover {
+            background: rgba(255, 204, 0, 0.8);
+            color: black;
+        }
+        .main-content {
+            flex-grow: 1;
+            position: relative;
+            background: url('bus-background.jpg') no-repeat center center/cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        .btn {
+            margin: 5px;
+            border-radius: 20px;
+            padding: 10px 20px;
+            font-weight: bold;
+        }
+        .toggle-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar" id="sidebar">
+        <a href="#">🏠 Home</a>
+        <a href="#">🚌 Bus Booking</a>
+        <a href="#">🎫 View Ticket</a>
+        <a href="#">🌍 Trip</a>
+        <a href="#">⚙️ Settings</a>
+    </nav>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <button class="toggle-btn" id="toggleSidebar">☰</button>
+        <div class="content">
+            <h1>Welcome to Bus Booking</h1>
+        </div>
+        <div class="buttons">
+            <a href="user-login.html" class="btn btn-primary">User Login</a>
+            <a href="sign_up.html" class="btn btn-success">Sign Up</a>
+
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('toggleSidebar').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>
